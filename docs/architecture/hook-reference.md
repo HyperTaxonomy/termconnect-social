@@ -18,8 +18,9 @@ The main file loads `includes/bootstrap.php` on `plugins_loaded` at priority 20,
 
 | Hook | Callback | Priority | Why |
 |---|---|---|---|
-| `the_content` | `tcs_render_tokens` | 20 | Runs on the finished HTML, after `wpautop` (10) and shortcodes (11) |
-| `save_post` | `tcs_sync_post_terms` | 20 | After callbacks at the default priority |
+| `the_content` | `tcsoc_render_tokens` | 20 | Runs on the finished HTML, after `wpautop` (10) and shortcodes (11) |
+| `save_post` | `tcsoc_sync_post_terms` | 20 | After callbacks at the default priority |
+| `htax_merge_terms_check`, `htax_before_merge_terms`, `htax_after_merge_terms`, `htax_merge_terms_messages` | `tcsoc_merge_check`, `tcsoc_before_merge`, `tcsoc_after_merge`, `tcsoc_merge_messages` | 10 | HyperTaxonomy merges: merged mentions' user links (`includes/merge.php`). No-ops without HyperTaxonomy |
 | `manage_edit-{$taxonomy}_columns`, `manage_{$taxonomy}_custom_column` | **Networks** column (hashtags) and **Profiles** column (mentions) | 100 | Runs after TermConnect adds its External Links column (99), so the new column can be placed right after it |
 
 The term list columns are registered for each of the two taxonomies when the plugin loads, not on `current_screen`: the **Add New Term** form renders the new row in an AJAX request where the current screen isn't the term list, and a screen check there would leave the new row's cell blank until the page is reloaded.

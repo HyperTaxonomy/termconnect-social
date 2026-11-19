@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-19 11:25-0500\n"
+"POT-Creation-Date: 2026-11-25 15:20-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,7 @@ msgid "Settings"
 msgstr ""
 
 #: includes/admin.php:43 includes/admin.php:44 includes/admin.php:131
+#: includes/merge.php:134
 msgid "TermConnect Social"
 msgstr ""
 
@@ -153,6 +154,30 @@ msgstr ""
 msgid "A local author profile"
 msgstr ""
 
+#: includes/merge.php:122
+#, php-format
+msgid ""
+"%1$s is linked to the user %2$s. The link moves to %3$s, so later mentions "
+"of %2$s use it."
+msgstr ""
+
+#: includes/merge.php:125
+#, php-format
+msgid ""
+"%1$s is linked to the user %2$s. %3$s is linked to another user, so this "
+"link is dropped."
+msgstr ""
+
+#: includes/merge.php:181
+#, php-format
+msgid "The link to the user %1$s moved to %2$s."
+msgstr ""
+
+#: includes/merge.php:184
+#, php-format
+msgid "The link to the user %1$s was dropped: %2$s is linked to another user."
+msgstr ""
+
 #: includes/rest.php:112
 msgid "Invalid taxonomy."
 msgstr ""
@@ -161,8 +186,8 @@ msgstr ""
 msgid "Invalid mention term."
 msgstr ""
 
-#: includes/taxonomies.php:48 assets/js/tcs-editor.js:651
-#: assets/js/tcs-editor.js:868
+#: includes/taxonomies.php:48 assets/js/tcsoc-editor.js:651
+#: assets/js/tcsoc-editor.js:868
 msgid "Hashtag"
 msgstr ""
 
@@ -186,8 +211,8 @@ msgstr ""
 msgid "No hashtags found."
 msgstr ""
 
-#: includes/taxonomies.php:74 assets/js/tcs-editor.js:832
-#: assets/js/tcs-editor.js:873
+#: includes/taxonomies.php:74 assets/js/tcsoc-editor.js:832
+#: assets/js/tcsoc-editor.js:873
 msgid "Mention"
 msgstr ""
 
@@ -225,32 +250,32 @@ msgid ""
 "active."
 msgstr ""
 
-#: assets/js/tcs-editor.js:666
+#: assets/js/tcsoc-editor.js:666
 msgid "Link this hashtag to:"
 msgstr ""
 
-#: assets/js/tcs-editor.js:669
+#: assets/js/tcsoc-editor.js:669
 msgid "No networks enabled."
 msgstr ""
 
-#: assets/js/tcs-editor.js:671 assets/js/tcs-editor.js:856
+#: assets/js/tcsoc-editor.js:671 assets/js/tcsoc-editor.js:856
 msgid "Apply"
 msgstr ""
 
-#: assets/js/tcs-editor.js:847
+#: assets/js/tcsoc-editor.js:847
 msgid "Link this mention to:"
 msgstr ""
 
-#: assets/js/tcs-editor.js:853
+#: assets/js/tcsoc-editor.js:853
 msgid ""
 "No profiles are configured for this mention yet. Add them on the mention’s "
 "edit screen."
 msgstr ""
 
-#: assets/js/tcs-editor.js:927 assets/js/tcs-editor.js:965
+#: assets/js/tcsoc-editor.js:927 assets/js/tcsoc-editor.js:965
 msgid "Create"
 msgstr ""
 
-#: assets/js/tcs-editor.js:967
+#: assets/js/tcsoc-editor.js:967
 msgid "user"
 msgstr ""

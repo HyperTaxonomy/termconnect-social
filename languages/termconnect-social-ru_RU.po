@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: termconnect-social 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-18 17:52-0500\n"
+"POT-Creation-Date: 2026-11-25 15:20-0500\n"
 "PO-Revision-Date: 2026-11-06 03:27-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,14 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: includes/admin.php:31
 msgid "Settings"
 msgstr "Настройки"
 
 #: includes/admin.php:43 includes/admin.php:44 includes/admin.php:131
+#: includes/merge.php:134
 msgid "TermConnect Social"
 msgstr "TermConnect Social"
 
@@ -90,8 +90,8 @@ msgid ""
 msgstr ""
 "Когда отключено, размещайте его вручную с помощью шорткода "
 "[social_blogosphere] (рекомендуется для блочных тем). Требует, чтобы "
-"«Блогосфера» была включена выше, а сторонние сайты WordPress были настроены "
-"в TermConnect."
+"«Блогосфера» была включена выше, а сторонние сайты WordPress были настроены в"
+" TermConnect."
 
 #: includes/admin.php:199
 msgid "Tokens with no enabled links"
@@ -170,6 +170,36 @@ msgstr "Локальный сайт"
 msgid "A local author profile"
 msgstr "Профиль автора на локальном сайте"
 
+#: includes/merge.php:122
+#, php-format
+msgid ""
+"%1$s is linked to the user %2$s. The link moves to %3$s, so later mentions of"
+" %2$s use it."
+msgstr ""
+"Упоминание %1$s связано с пользователем %2$s. Связь переносится на упоминание"
+" %3$s, и оно будет использоваться при последующих упоминаниях %2$s."
+
+#: includes/merge.php:125
+#, php-format
+msgid ""
+"%1$s is linked to the user %2$s. %3$s is linked to another user, so this link"
+" is dropped."
+msgstr ""
+"Упоминание %1$s связано с пользователем %2$s. Упоминание %3$s уже связано с "
+"другим пользователем, поэтому эта связь удаляется."
+
+#: includes/merge.php:181
+#, php-format
+msgid "The link to the user %1$s moved to %2$s."
+msgstr "Связь с пользователем %1$s перенесена на упоминание %2$s."
+
+#: includes/merge.php:184
+#, php-format
+msgid "The link to the user %1$s was dropped: %2$s is linked to another user."
+msgstr ""
+"Связь с пользователем %1$s удалена: упоминание %2$s связано с другим "
+"пользователем."
+
 #: includes/rest.php:112
 msgid "Invalid taxonomy."
 msgstr "Недопустимая таксономия."
@@ -178,14 +208,14 @@ msgstr "Недопустимая таксономия."
 msgid "Invalid mention term."
 msgstr "Недопустимое упоминание (термин)."
 
-#: includes/taxonomies.php:48 assets/js/tcs-editor.js:651
-#: assets/js/tcs-editor.js:868
+#: includes/taxonomies.php:48 assets/js/tcsoc-editor.js:651
+#: assets/js/tcsoc-editor.js:868
 msgid "Hashtag"
 msgstr "Хештег"
 
 #: includes/taxonomies.php:50
 msgid "Search Hashtags"
-msgstr "Поиск в хештегах"
+msgstr "Найти хештеги"
 
 #: includes/taxonomies.php:51
 msgid "All Hashtags"
@@ -193,7 +223,7 @@ msgstr "Все хештеги"
 
 #: includes/taxonomies.php:52
 msgid "Edit Hashtag"
-msgstr "Редактировать хештег"
+msgstr "Изменить хештег"
 
 #: includes/taxonomies.php:53
 msgid "View Hashtag"
@@ -203,14 +233,14 @@ msgstr "Просмотреть хештег"
 msgid "No hashtags found."
 msgstr "Хештеги не найдены."
 
-#: includes/taxonomies.php:74 assets/js/tcs-editor.js:832
-#: assets/js/tcs-editor.js:873
+#: includes/taxonomies.php:74 assets/js/tcsoc-editor.js:832
+#: assets/js/tcsoc-editor.js:873
 msgid "Mention"
 msgstr "Упоминание"
 
 #: includes/taxonomies.php:76
 msgid "Search Mentions"
-msgstr "Поиск в упоминаниях"
+msgstr "Найти упоминания"
 
 #: includes/taxonomies.php:77
 msgid "All Mentions"
@@ -218,7 +248,7 @@ msgstr "Все упоминания"
 
 #: includes/taxonomies.php:78
 msgid "Edit Mention"
-msgstr "Редактировать упоминание"
+msgstr "Изменить упоминание"
 
 #: includes/taxonomies.php:79
 msgid "View Mention"
@@ -238,29 +268,29 @@ msgstr "Добавить профили"
 
 #: termconnect-social.php:100
 msgid ""
-"TermConnect Social requires the TermConnect plugin to be installed "
-"and active."
+"TermConnect Social requires the TermConnect plugin to be installed and "
+"active."
 msgstr ""
-"TermConnect Social требует, чтобы плагин TermConnect был установлен "
-"и активен."
+"TermConnect Social требует, чтобы плагин TermConnect был установлен и "
+"активен."
 
-#: assets/js/tcs-editor.js:666
+#: assets/js/tcsoc-editor.js:666
 msgid "Link this hashtag to:"
 msgstr "Связать этот хештег с:"
 
-#: assets/js/tcs-editor.js:669
+#: assets/js/tcsoc-editor.js:669
 msgid "No networks enabled."
 msgstr "Нет включённых социальных сетей."
 
-#: assets/js/tcs-editor.js:671 assets/js/tcs-editor.js:856
+#: assets/js/tcsoc-editor.js:671 assets/js/tcsoc-editor.js:856
 msgid "Apply"
 msgstr "Сохранить"
 
-#: assets/js/tcs-editor.js:847
+#: assets/js/tcsoc-editor.js:847
 msgid "Link this mention to:"
 msgstr "Связать это упоминание с:"
 
-#: assets/js/tcs-editor.js:853
+#: assets/js/tcsoc-editor.js:853
 msgid ""
 "No profiles are configured for this mention yet. Add them on the mention’s "
 "edit screen."
@@ -268,10 +298,10 @@ msgstr ""
 "Для этого упоминания ещё не настроено ни одного профиля. Добавьте их на "
 "странице редактирования упоминания."
 
-#: assets/js/tcs-editor.js:927 assets/js/tcs-editor.js:965
+#: assets/js/tcsoc-editor.js:927 assets/js/tcsoc-editor.js:965
 msgid "Create"
 msgstr "Создать"
 
-#: assets/js/tcs-editor.js:967
+#: assets/js/tcsoc-editor.js:967
 msgid "user"
 msgstr "пользователь"

@@ -21,10 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'TCSOC_PLUGIN_FILE',     __FILE__ );
-define( 'TCSOC_PLUGIN_DIR',      plugin_dir_path( __FILE__ ) );
-define( 'TCSOC_PLUGIN_URL',      plugin_dir_url( __FILE__ ) );
-define( 'TCSOC_VERSION',         '1.0.0' );
+define( 'TCSOC_PLUGIN_FILE', __FILE__ );
+define( 'TCSOC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'TCSOC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'TCSOC_VERSION', '1.0.0' );
 define( 'TCSOC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 register_activation_hook( __FILE__, 'tcsoc_activate' );

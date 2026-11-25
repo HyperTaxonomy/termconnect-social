@@ -33,7 +33,10 @@ add_filter( 'htax_merge_terms_messages', 'tcsoc_merge_messages' );
  * @return array{links: array<int, int>, messages: string[]}
  */
 function &tcsoc_merge_state(): array {
-    static $state = array( 'links' => array(), 'messages' => array() );
+    static $state = array(
+        'links' => array(),
+        'messages' => array(),
+    );
     return $state;
 }
 
@@ -124,7 +127,10 @@ function tcsoc_merge_check( $sections, $source_ids, $target_id, $taxonomy ) {
             /* translators: 1: source mention name, 2: user's display name, 3: target mention name */
             $text = sprintf( __( '%1$s is linked to the user %2$s. %3$s is linked to another user, so this link is dropped.', 'termconnect-social' ), $name, $user, $target->name );
         }
-        $notices[] = array( 'type' => 'info', 'text' => $text );
+        $notices[] = array(
+            'type' => 'info',
+            'text' => $text,
+        );
     }
 
     if ( $notices ) {
@@ -164,10 +170,10 @@ function tcsoc_before_merge( $source_ids, $target_id, $taxonomy ): void {
  * @param string $taxonomy   Taxonomy.
  */
 function tcsoc_after_merge( $source_ids, $target_id, $taxonomy ): void {
-    $state = &tcsoc_merge_state();
-    $links = $state['links'];
+    $state          = &tcsoc_merge_state();
+    $links          = $state['links'];
     $state['links'] = array();
-    $target = get_term( (int) $target_id, 'mention' );
+    $target         = get_term( (int) $target_id, 'mention' );
     if ( ! $links || ! $target instanceof WP_Term ) {
         return;
     }

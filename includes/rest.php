@@ -43,8 +43,14 @@ function tcsoc_register_rest_routes(): void {
         'callback'            => 'tcsoc_rest_search_terms',
         'permission_callback' => 'tcsoc_rest_can_edit',
         'args'                => array(
-            'tax' => array( 'required' => true, 'type' => 'string' ),
-            'q'   => array( 'required' => false, 'type' => 'string' ),
+            'tax' => array(
+                'required' => true,
+                'type' => 'string',
+            ),
+            'q'   => array(
+                'required' => false,
+                'type' => 'string',
+            ),
         ),
     ) );
 
@@ -53,7 +59,10 @@ function tcsoc_register_rest_routes(): void {
         'callback'            => 'tcsoc_rest_search_users',
         'permission_callback' => 'tcsoc_rest_can_edit',
         'args'                => array(
-            'q' => array( 'required' => false, 'type' => 'string' ),
+            'q' => array(
+                'required' => false,
+                'type' => 'string',
+            ),
         ),
     ) );
 
@@ -65,7 +74,10 @@ function tcsoc_register_rest_routes(): void {
         // (rendered with the mention on the front end).
         'permission_callback' => 'tcsoc_rest_can_edit',
         'args'                => array(
-            'term_id' => array( 'required' => true, 'type' => 'integer' ),
+            'term_id' => array(
+                'required' => true,
+                'type' => 'integer',
+            ),
         ),
     ) );
 }
@@ -187,7 +199,7 @@ function tcsoc_collect_handles( int $term_id ): array {
             // Show the handle (or "handle (Name)") — the icon identifies the network.
             $handle = (string) ( $links[ 'social_' . $slug ] ?? '' );
             $name   = ( '' !== $handle ) ? tcsoc_link_name( $term_id, 'social_' . $slug, $handle ) : '';
-            $out[] = array(
+            $out[]  = array(
                 'network' => $slug,
                 'label'   => ( '' !== $handle && '' !== $name ) ? $handle . ' (' . $name . ')' : $handle,
                 'handle'  => $handle,

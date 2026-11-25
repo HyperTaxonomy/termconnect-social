@@ -207,12 +207,12 @@ function tcsoc_render_blogosphere( array $args = array() ): string {
         return '';
     }
 
-    $total = count( $pool );
-    $page     = isset( $_GET['tcsoc_bg_page'] ) ? max( 1, absint( wp_unslash( $_GET['tcsoc_bg_page'] ) ) ) : 1;
-    $pages    = (int) ceil( $total / $per_page );
-    $page     = min( $page, $pages );
-    $offset   = ( $page - 1 ) * $per_page;
-    $items    = array_slice( $pool, $offset, $per_page );
+    $total  = count( $pool );
+    $page   = isset( $_GET['tcsoc_bg_page'] ) ? max( 1, absint( wp_unslash( $_GET['tcsoc_bg_page'] ) ) ) : 1;
+    $pages  = (int) ceil( $total / $per_page );
+    $page   = min( $page, $pages );
+    $offset = ( $page - 1 ) * $per_page;
+    $items  = array_slice( $pool, $offset, $per_page );
 
     ob_start();
     ?>

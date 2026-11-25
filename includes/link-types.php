@@ -262,7 +262,10 @@ function tcsoc_parse_suggest_response( array $results, string $body, string $par
         foreach ( (array) ( $data['items'] ?? array() ) as $item ) {
             $login = (string) ( $item['login'] ?? '' );
             if ( '' !== $login ) {
-                $out[] = array( 'value' => $login, 'label' => '@' . $login );
+                $out[] = array(
+                    'value' => $login,
+                    'label' => '@' . $login,
+                );
             }
         }
         return $out;
@@ -274,8 +277,8 @@ function tcsoc_parse_suggest_response( array $results, string $body, string $par
         if ( '' === $handle ) {
             continue;
         }
-        $name      = (string) ( $actor['displayName'] ?? '' );
-        $out[]     = array(
+        $name  = (string) ( $actor['displayName'] ?? '' );
+        $out[] = array(
             'value' => $handle,
             'label' => '' !== $name ? $name . ' (@' . $handle . ')' : '@' . $handle,
         );

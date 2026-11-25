@@ -29,7 +29,7 @@ function tcsoc_get_settings(): array {
     // caller that switch_to_blog()s between sites within one request must never be
     // served a different site's cached settings.
     static $cache = array();
-    $blog_id = get_current_blog_id();
+    $blog_id      = get_current_blog_id();
     if ( isset( $cache[ $blog_id ] ) ) {
         return $cache[ $blog_id ];
     }

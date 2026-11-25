@@ -43,7 +43,7 @@ function tcsoc_get_network_registry(): array {
     // this way, and third-party tooling may do the same) never gets served a
     // different site's cached/filtered registry.
     static $cache = array();
-    $blog_id = get_current_blog_id();
+    $blog_id      = get_current_blog_id();
     if ( isset( $cache[ $blog_id ] ) ) {
         return $cache[ $blog_id ];
     }
@@ -288,7 +288,7 @@ function tcsoc_taxonomies(): array {
  * @return string
  */
 function tcsoc_network_icon_html( string $slug, string $dashicon, string $color = '', string $extra_class = '' ): string {
-    $svg   = tcsoc_network_svg( $slug );
+    $svg = tcsoc_network_svg( $slug );
     // The SVG fills with currentColor and Dashicons are font glyphs, so a wrapper
     // text color tints either. Front-end/editor pass the brand color; admin omits it.
     $style = '' !== $color ? ' style="color:' . esc_attr( $color ) . '"' : '';
@@ -313,7 +313,11 @@ function tcsoc_network_icon_html( string $slug, string $dashicon, string $color 
  */
 function tcsoc_allowed_html(): array {
     $allowed         = wp_kses_allowed_html( 'post' );
-    $allowed['svg']  = array( 'role' => true, 'viewbox' => true, 'xmlns' => true );
+    $allowed['svg']  = array(
+        'role' => true,
+        'viewbox' => true,
+        'xmlns' => true,
+    );
     $allowed['path'] = array( 'd' => true );
     foreach ( array( 'section', 'nav' ) as $tag ) {
         $allowed[ $tag ]['aria-label'] = true;

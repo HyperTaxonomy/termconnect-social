@@ -125,7 +125,7 @@ function tcsoc_render_profiles_cell( int $term_id ): string {
         if ( '' === $handle ) {
             continue;
         }
-        $def  = tcsoc_get_network( $slug );
+        $def = tcsoc_get_network( $slug );
         if ( ! $def ) {
             continue;
         }
@@ -177,8 +177,8 @@ function tcsoc_render_networks_cell( int $term_id ): string {
         if ( '' === $url ) {
             continue;
         }
-        $icon = tcsoc_network_icon_html( $slug, $def['icon'] ?? 'dashicons-admin-links' );
-        $rel  = $external ? ' target="_blank" rel="noopener nofollow"' : '';
+        $icon    = tcsoc_network_icon_html( $slug, $def['icon'] ?? 'dashicons-admin-links' );
+        $rel     = $external ? ' target="_blank" rel="noopener nofollow"' : '';
         $items[] = '<a class="tcsoc-col-icon" href="' . esc_url( $url ) . '"' . $rel . ' title="' . esc_attr( $def['label'] ) . '">' . $icon . '</a>';
     }
 

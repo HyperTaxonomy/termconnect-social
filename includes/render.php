@@ -535,7 +535,7 @@ function tcsoc_mention_label_html( array $t ): string {
  * @return string
  */
 function tcsoc_set_attr( string $attrs, string $name, string $value ): string {
-    $escaped     = esc_url( $value );
+    $escaped = esc_url( $value );
     // (?<=^|\s): the name must start right after whitespace or the start of the
     // attribute list, not just any word-boundary — so "data-evil-data-tcs-tax" can't
     // be misread as "data-tcs-tax" the way a generic \b boundary would allow.
@@ -559,7 +559,7 @@ function tcsoc_set_attr( string $attrs, string $name, string $value ): string {
 function tcsoc_set_text_attr( string $attrs, string $name, string $value ): string {
     $replacement = $name . '="' . esc_attr( $value ) . '"';
     // (?<=^|\s): see tcsoc_set_attr() above.
-    $pattern     = '/(?<=^|\s)' . preg_quote( $name, '/' ) . '=("|\').*?\1/i';
+    $pattern = '/(?<=^|\s)' . preg_quote( $name, '/' ) . '=("|\').*?\1/i';
     if ( preg_match( $pattern, $attrs ) ) {
         return (string) preg_replace( $pattern, $replacement, $attrs, 1 );
     }

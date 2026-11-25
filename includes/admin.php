@@ -106,7 +106,10 @@ function tcsoc_admin_handle_save(): void {
     tcsoc_save_settings( $networks, $auto, $no_link, isset( $_POST['tcsoc_delete_on_uninstall'] ) );
 
     wp_safe_redirect( add_query_arg(
-        array( 'page' => 'termconnect-social', 'tcsoc-saved' => '1' ),
+        array(
+            'page' => 'termconnect-social',
+            'tcsoc-saved' => '1',
+        ),
         admin_url( 'options-general.php' )
     ) );
     exit;
@@ -122,9 +125,9 @@ function tcsoc_admin_render(): void {
         wp_die( esc_html__( 'Permission denied.', 'termconnect-social' ) );
     }
 
-    $states   = tcsoc_get_network_states();
-    $auto     = tcsoc_blogosphere_auto_append_setting();
-    $no_link  = tcsoc_no_link_mode();
+    $states      = tcsoc_get_network_states();
+    $auto        = tcsoc_blogosphere_auto_append_setting();
+    $no_link     = tcsoc_no_link_mode();
     $tconn_ready = function_exists( 'tconn_get_all_link_types' );
     ?>
     <div class="wrap tcsoc-settings">

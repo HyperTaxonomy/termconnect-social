@@ -59,7 +59,10 @@ function tcsoc_uninstall_cleanup(): void {
 }
 
 if ( is_multisite() ) {
-    foreach ( get_sites( array( 'number' => 0, 'fields' => 'ids' ) ) as $tcsoc_site_id ) {
+    foreach ( get_sites( array(
+        'number' => 0,
+        'fields' => 'ids',
+    ) ) as $tcsoc_site_id ) {
         switch_to_blog( $tcsoc_site_id );
         tcsoc_uninstall_cleanup();
         restore_current_blog();

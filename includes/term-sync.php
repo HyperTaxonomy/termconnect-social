@@ -223,7 +223,7 @@ function tcsoc_get_or_create_term( string $name, string $taxonomy, int $user_id 
         // The name collides with a different user's already-linked term. WordPress
         // itself forbids two terms with the same name in a flat taxonomy, so create
         // a distinctly-named term instead of silently reassigning their link.
-        $name = tcsoc_disambiguate_term_name( $name, $user_id );
+        $name     = tcsoc_disambiguate_term_name( $name, $user_id );
         $existing = term_exists( $name, $taxonomy );
         if ( $existing ) {
             $term_id = (int) ( is_array( $existing ) ? $existing['term_id'] : $existing );
